@@ -1,5 +1,5 @@
 const express = require('express')
-const { getCompanies, getCompany, createCompany, updateCompany, deleteCompany } = require('../controllers/companys');
+const { getCompanies, getCompany, createCompany, updateCompany, deleteCompany } = require('../controllers/companies');
 
 const interviewRouter = require('./interviews');
 

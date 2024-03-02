@@ -3,7 +3,7 @@ const { getInterviews,
         getInterview,
         addInterview,
         updateInterview,
-        deleteInterview } = require('../controllers/interview');
+        deleteInterview } = require('../controllers/interviews');
 
 const router = express.Router({ mergeParams: true });
 

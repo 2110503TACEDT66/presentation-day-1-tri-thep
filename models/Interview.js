@@ -1,6 +1,6 @@
-const moongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-const InterviewSchema = new moongoose.Schema({
+const InterviewSchema = new mongoose.Schema({
     interviewDate: {
         type: Date,
         required: true
