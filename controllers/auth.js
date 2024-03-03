@@ -16,13 +16,14 @@ const sendTokenResponse=(user,statusCode,res)=>{
 
 exports.register= async (req,res,next)=>{
     try{
-        const {name,email,password,tel}=req.body;
+        const {name,email,password,tel,role}=req.body;
 
         const user=await User.create({
             name,
             email,
             password,
-            tel
+            tel,
+            role
         });
         sendTokenResponse(user,200,res);
     }catch(err){
