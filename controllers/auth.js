@@ -1,7 +1,7 @@
 const User = require('../models/User');
 
 const sendTokenResponse=(user,statusCode,res)=>{
-    const token =user.getSingedJwtToken();
+    const token = user.getSingedJwtToken();
 
     const options = {
         expires:new Date(Date.now()+process.env.JWT_COOKIE_EXPIRE*24*60*60*1000),
@@ -16,13 +16,13 @@ const sendTokenResponse=(user,statusCode,res)=>{
 
 exports.register= async (req,res,next)=>{
     try{
-        const {name,email,password,role}=req.body;
+        const {name,email,password,tel}=req.body;
 
         const user=await User.create({
             name,
             email,
             password,
-            role
+            tel
         });
         sendTokenResponse(user,200,res);
     }catch(err){
