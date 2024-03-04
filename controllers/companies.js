@@ -28,7 +28,7 @@ exports.getCompanies= async (req,res,next)=>{
         const limit = parseInt(req.query.limit,10) || 25;
         const startIndex=(page-1)*limit;
         const endIndex=page*limit;
-        const total= await Hospital.countDocuments();
+        const total= await Company.countDocuments();
 
         query=query.skip(startIndex).limit(limit);
 
@@ -57,7 +57,7 @@ exports.getCompanies= async (req,res,next)=>{
 
 exports.getCompany=async (req,res,next)=>{
     try{
-        const company = await Hospital.findById(req.params.id);
+        const company = await Company.findById(req.params.id);
         if(!company){
            return res.status(400).json({success:false});
         }
@@ -68,7 +68,7 @@ exports.getCompany=async (req,res,next)=>{
 };
 
 exports.createCompany=async (req,res,next)=>{
-    const company = await Hospital.create(req.body);
+    const company = await Company.create(req.body);
     res.status(201).json({success:true , data:company});
 };
 

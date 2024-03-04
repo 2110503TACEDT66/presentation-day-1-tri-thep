@@ -10,7 +10,7 @@ exports.getInterviews=async (req,res,next)=>{
             console.log(req.params.companyId);
             query=Interview.find({company:req.params.companyId}).populate({path:'company',select:'name address tel'});
         }else{
-            query=Interview.find().populate({path:'hospital',select:'name address tel'});
+            query=Interview.find().populate({path:'company',select:'name address tel'});
         }
     }
 
